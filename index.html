@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>HITAM - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="--college-image: url('images/hitam%20colege%20photo.webp'); --college-opacity:0.12">
+
+<div class="sidebar">
+
+    <h2>HITAM</h2>
+
+    <a href="index.html">🏠 Home</a>
+    <a href="about.html">📖 About</a>
+
+    <button class="dropdown-btn">🎓 Courses <span class="caret">▸</span></button>
+    <div class="dropdown-container">
+        <a href="course.html#course-cse">CSE</a>
+        <a href="course.html#course-cse-aiml">CSE (AI & ML)</a>
+        <a href="course.html#course-cse-ds">CSE (Data Science)</a>
+        <a href="course.html#course-ece">ECE</a>
+        <a href="course.html#course-eee">EEE</a>
+        <a href="course.html#course-mech">Mechanical</a>
+        <a href="course.html#course-civil">Civil</a>
+    </div>
+
+    <button class="dropdown-btn">💰 Fee Structure <span class="caret">▸</span></button>
+    <div class="dropdown-container">
+        <a href="fee.html">Fees</a>
+        <a href="fee.html#hostel">Hostel Fees</a>
+    </div>
+
+    <button class="dropdown-btn">💼 Placements <span class="caret">▸</span></button>
+    <div class="dropdown-container">
+        <a href="placements.html#placed-2025">Placed - 2025</a>
+        <a href="placements.html#placed-2026">Placed - 2026</a>
+    </div>
+
+    <button class="dropdown-btn">👨‍🏫 Faculty <span class="caret">▸</span></button>
+    <div class="dropdown-container">
+        <a href="faculty.html#cse">CSE</a>
+        <a href="faculty.html#cse-aiml">CSE (AI & ML)</a>
+        <a href="faculty.html#cse-ds">CSE (Data Science)</a>
+        <a href="faculty.html#ece">ECE</a>
+        <a href="faculty.html#eee">EEE</a>
+        <a href="faculty.html#mech">Mechanical</a>
+        <a href="faculty.html#civil">Civil</a>
+    </div>
+
+    <button class="dropdown-btn">🎒 Campus Life <span class="caret">▸</span></button>
+    <div class="dropdown-container">
+        <a href="sports.html">Sports</a>
+        <a href="ncc.html">NCC</a>
+        <a href="nss.html">NSS</a>
+    </div>
+
+    <button class="dropdown-btn">🚌 Transport <span class="caret">▸</span></button>
+    <div class="dropdown-container">
+        <a href="transport.html">🗺️ Bus Routes</a>
+    </div>
+
+    <a href="contact.html">📞 Contact</a>
+
+</div>
+
+<div class="content">
+
+    <div class="hero" style="--hero-image: url('images/hitam%20colege%20photo.webp')">
+
+        <h1>Hyderabad Institute of Technology and Management</h1>
+
+        <p>
+            Welcome to HITAM, a premier institution committed to
+            excellence in engineering, innovation, research,
+            and student success.
+        </p>
+
+        <br>
+
+        <h2>Admissions Open 2026-27</h2>
+
+        <p>
+            Applications are invited for B.Tech programs in
+            CSE, AI & DS, ECE, EEE, Mechanical and Civil Engineering.
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Placement Highlights 2026</h2>
+
+        <ul>
+            <li>Highest Package: 💰 24 LPA</li>
+            <li>Average Package: 💸 10.5 LPA</li>
+            <li>Placement Rate: 92%</li>
+            <li>20 Students Successfully Placed</li>
+        </ul>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Top Recruiters</h2>
+
+        <p>
+            Deloitte, Infosys, TCS, Accenture,
+            Cognizant, Capgemini, Wipro, HCL,
+            Tech Mahindra and IBM.
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Campus Facilities</h2>
+
+        <ul>
+            <li>Smart Classrooms</li>
+            <li>Digital Library</li>
+            <li>Advanced Computer Labs</li>
+            <li>Sports Complex</li>
+            <li>Hostel Facilities</li>
+            <li>Training & Placement Cell</li>
+        </ul>
+
+    </div>
+
+</div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function(){
+        var buttons = document.querySelectorAll('.dropdown-btn');
+        buttons.forEach(function(btn){
+            var container = btn.nextElementSibling;
+            var caret = btn.querySelector('.caret');
+            btn.addEventListener('click', function(){
+                if(container) container.classList.toggle('show');
+                if(caret) caret.style.transform = container && container.classList.contains('show') ? 'rotate(90deg)' : 'rotate(0deg)';
+            });
+        });
+    });
+    </script>
+    
+</body>
+</html>

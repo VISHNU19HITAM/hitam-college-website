@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Courses</title>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="hero" style="--hero-image: url('images/course.jpg')">
+	<h1>Courses Offered at HITAM</h1>
+	<p>We offer a wide range of undergraduate programs designed to prepare students for industry and research careers.</p>
+	<a class="back-btn" href="index.html">Back</a>
+</div>
+
+<div class="content">
+	<div class="card">
+		<h2>Programs</h2>
+		<table border="1">
+		<tr>
+		<th>Department</th>
+		<th>Duration</th>
+		</tr>
+		<tr>
+		<td>Computer Science and Engineering</td>
+		<td>4 Years</td>
+		</tr>
+		<tr>
+		<td>CSE(Artificial Intelligence & Machine Learning)</td>
+		<td>4 Years</td>
+		</tr>
+		<tr>
+		<td>CSE(Data Science)</td>
+		<td>4 Years</td>
+		</tr>
+		<tr>
+		<td>Electronics and Communication Engineering</td>
+		<td>4 Years</td>
+		</tr>
+		<tr>
+		<td>Electrical and Electronics Engineering</td>
+		<td>4 Years</td>
+		</tr>
+		<tr>
+		<td>Mechanical Engineering</td>
+		<td>4 Years</td>
+		</tr>
+		<tr>
+		<td>Civil Engineering</td>
+		<td>4 Years</td>
+		</tr>
+		</table>
+	</div>
+
+	<!-- Course Overviews -->
+	<div class="card">
+		<h2 id="course-cse">Computer Science and Engineering (CSE)</h2>
+		<h3>About</h3>
+		<p>The CSE program builds strong fundamentals in programming, system design and computational theory. Students gain hands-on experience through labs, projects and industry internships.</p>
+		<h3>Future</h3>
+		<p>Graduates are well placed for careers in software, cloud computing, cybersecurity and research; growth in AI/ML and distributed systems keeps demand high.</p>
+		<h3>Achievements</h3>
+		<ul>
+			<li>Consistent high placement rates with graduates joining top tech firms.</li>
+			<li>Student projects have won regional hackathons and research showcases.</li>
+			<li>Active industry partnerships for internships and live projects.</li>
+		</ul>
+	</div>
+
+	<div class="card">
+		<h2 id="course-cse-aiml">CSE — Artificial Intelligence & Machine Learning</h2>
+		<h3>About</h3>
+		<p>This specialization focuses on machine learning algorithms, deep learning frameworks and practical AI applications across industries.</p>
+		<h3>Future</h3>
+		<p>Strong demand in sectors like healthcare, finance and autonomous systems; graduates pursue roles as ML engineers, research interns and AI consultants.</p>
+		<h3>Achievements</h3>
+		<ul>
+			<li>Faculty-led projects published in conferences and journals.</li>
+			<li>Students placed in AI-focused roles and internships at startups and MNCs.</li>
+			<li>Regular AI workshops and guest lectures from industry experts.</li>
+		</ul>
+	</div>
+
+	<div class="card">
+		<h2 id="course-cse-ds">CSE — Data Science</h2>
+		<h3>About</h3>
+		<p>The Data Science track teaches statistical modeling, ETL pipelines and visualization techniques to extract insights from large datasets.</p>
+		<h3>Future</h3>
+		<p>Data-driven decision making across industries creates roles in analytics, data engineering and product analytics; skills in ML and cloud data stacks are valuable.</p>
+		<h3>Achievements</h3>
+		<ul>
+			<li>Alumni working as data scientists and analytics leads in product companies.</li>
+			<li>Department hosts data challenges and collaborates with industry sponsors for capstone projects.</li>
+		</ul>
+	</div>
+
+	<div class="card">
+		<h2 id="course-ece">Electronics & Communication Engineering (ECE)</h2>
+		<h3>About</h3>
+		<p>ECE blends circuit theory, signal processing and embedded systems design to enable careers in telecom, hardware and IoT product development.</p>
+		<h3>Future</h3>
+		<p>Emerging technologies like 5G, IoT and edge computing drive demand for ECE graduates in R&D and product development roles.</p>
+		<h3>Achievements</h3>
+		<ul>
+			<li>Students have built award-winning embedded projects and IoT prototypes.</li>
+			<li>Collaborations with local industries for training and internships.</li>
+		</ul>
+	</div>
+
+	<div class="card">
+		<h2 id="course-eee">Electrical & Electronics Engineering (EEE)</h2>
+		<h3>About</h3>
+		<p>EEE focuses on power systems, control theory and power electronics to prepare students for roles in energy, automation and industrial systems.</p>
+		<h3>Future</h3>
+		<p>With growing emphasis on renewable energy and smart grids, EEE graduates are positioned for opportunities in energy transition and automation.</p>
+		<h3>Achievements</h3>
+		<ul>
+			<li>Faculty and students contribute to regional energy projects and workshops.</li>
+			<li>Hands-on labs and industry tie-ups enhance practical learning.</li>
+		</ul>
+	</div>
+
+	<div class="card">
+		<h2 id="course-mech">Mechanical Engineering</h2>
+		<h3>About</h3>
+		<p>Mechanical engineering covers design, manufacturing processes and thermofluids with emphasis on CAD, prototyping and industrial applications.</p>
+		<h3>Future</h3>
+		<p>Demand exists in manufacturing, automotive, aerospace and product design; additive manufacturing and automation broaden career paths.</p>
+		<h3>Achievements</h3>
+		<ul>
+			<li>Student teams participate in design competitions and prototyping challenges.</li>
+			<li>Industry-sponsored projects provide real-world exposure.</li>
+		</ul>
+	</div>
+
+	<div class="card">
+		<h2 id="course-civil">Civil Engineering</h2>
+		<h3>About</h3>
+		<p>Civil engineering trains students in structural analysis, construction materials and project management for infrastructure development.</p>
+		<h3>Future</h3>
+		<p>Opportunities in urban infrastructure, sustainable construction and project management continue to grow with increasing development projects.</p>
+		<h3>Achievements</h3>
+		<ul>
+			<li>Alumni working on major infrastructure and consultancy projects.</li>
+			<li>Student projects in sustainable construction and water management.</li>
+		</ul>
+	</div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+	function updateCourses(){
+		var hash = location.hash;
+		var headings = document.querySelectorAll('h2[id^="course-"]');
+		headings.forEach(function(h){
+			var card = h.closest('.card');
+			if(!card) return;
+			if(hash && ('#'+h.id) !== hash){
+				card.style.display = 'none';
+			} else {
+				card.style.display = '';
+			}
+		});
+		if(hash){
+			var el = document.querySelector(hash);
+			if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+		}
+	}
+	updateCourses();
+	window.addEventListener('hashchange', updateCourses);
+});
+</script>
+
+</body>
+</html>

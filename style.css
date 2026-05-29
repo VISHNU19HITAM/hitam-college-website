@@ -1,0 +1,269 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: 'Montserrat', 'Segoe UI', 'Noto Color Emoji', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
+    background:var(--bg, #f2f7f8);
+    color:var(--text, #102a43);
+}
+/* Theme variables and defaults */
+:root{
+    --primary: #09ce2d; /* HITAM green */
+    --accent: #c8e6c9;
+    --accent-2: #17981e;
+    --bg: #f2fbf6;
+    --text: #030b05;
+    --muted: #547a63;
+    /* Default college image (local asset) */
+    --college-image: url('images/hitam%20colege%20photo.webp');
+    --college-opacity: 0.12;
+}
+
+.sidebar{
+    position:fixed;
+    left:0;
+    box-shadow:0 8px 22px rgba(46,125,50,0.18);
+    width:250px;
+    height:100%;
+    background:var(--primary);
+    box-shadow:0 12px 30px rgba(46,125,50,0.22);
+    z-index:2;
+}
+
+.sidebar h2{
+    color:rgb(248, 244, 244);
+    text-align:center;
+    padding:20px;
+    border-bottom:1px solid rgba(255,255,255,0.12);
+}
+
+.sidebar a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding:15px 20px;
+    transition:0.18s ease;
+}
+
+.sidebar a:hover{
+    background:rgba(255,255,255,0.06);
+    transform:translateX(4px);
+}
+
+/* Dropdown styles inside sidebar */
+.dropdown-btn{
+    display:block;
+    color:white;
+    background:transparent;
+    border:none;
+    width:100%;
+    text-align:left;
+    padding:15px 20px;
+    cursor:pointer;
+    font-size:16px;
+}
+.dropdown-btn:focus{outline:none}
+.dropdown-btn .caret{float:right;transition:transform .18s}
+.dropdown-container{display:none;background:rgba(255,255,255,0.02);padding-left:10px}
+.dropdown-container a{padding:12px 28px}
+.dropdown-container.show{display:block}
+
+.content{
+    margin-left:250px;
+    padding:12px; /* tightened padding */
+    position:relative;
+    z-index:1;
+}
+
+/* Subtle transparent campus photo across the interface */
+body::before{
+    /* overlay disabled per user request */
+    display:none;
+}
+
+.hero{
+    position:relative;
+    background-image: linear-gradient(rgba(2,22,29,0.45), rgba(2,22,29,0.25)), var(--hero-image);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color:white;
+    padding:32px 20px; /* reduced hero padding */
+    border-radius:6px;
+    box-shadow:0 6px 18px rgba(8,24,32,0.08);
+}
+
+/* small logo inside hero (used on pages like NSS) */
+.hero-logo{
+    position:absolute;
+    top:14px;
+    right:18px;
+    width:64px;
+    height:auto;
+    border-radius:8px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+    border:2px solid rgba(255,255,255,0.12);
+}
+
+.card{
+    background:white;
+    padding:14px; /* tightened */
+    margin-top:10px;
+    border-radius:8px;
+    box-shadow:0 6px 14px rgba(8,24,32,0.05);
+}
+
+/* Headings use the primary (green) color by default; sidebar and hero
+   explicitly override this where needed. */
+h1, h2, h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+ul{
+    margin-left:20px;
+    margin-top:10px;
+}
+
+li{
+    margin-bottom:8px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+    background:white;
+}
+
+th{
+    background:linear-gradient(90deg,var(--primary), #0e5560);
+    color:white;
+}
+
+th,td{
+    border:1px solid #e6eef0;
+    padding:12px;
+    text-align:center;
+}
+
+.back-btn{
+    display:inline-block;
+    background:var(--primary);
+    color:white;
+    text-decoration:none;
+    padding:12px 26px;
+    border-radius:30px;
+    margin-top:20px;
+    font-weight:700;
+    box-shadow:0 8px 22px rgba(11,138,83,0.18);
+}
+
+.back-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 30px rgba(11,138,83,0.26);
+}
+
+.hero h1{font-size:2.2rem;margin-bottom:10px}
+.hero p{font-size:1.05rem;line-height:1.6;max-width:900px}
+
+@media(max-width:900px){
+    .sidebar{position:static;width:100%;height:auto}
+    .content{margin-left:0;padding:20px}
+    .hero{padding:40px}
+}
+
+/* Emoji font fallback for consistent emoji rendering */
+.emoji{
+    font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', 'Segoe UI Symbol', sans-serif;
+}
+
+/* Department grid for faculty page */
+.dept-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:18px;
+    margin-top:20px;
+}
+.dept-card{
+    background:white;
+    padding:18px;
+    border-radius:10px;
+    box-shadow:0 6px 18px rgba(8,24,32,0.06);
+    border-left:6px solid var(--primary);
+}
+.dept-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.dept-head h3{margin:0;color:var(--primary)}
+.dept-head .head-name{background:var(--accent);padding:6px 10px;border-radius:20px;font-weight:600;color:#123;}
+.dept-list{list-style:none;padding-left:0}
+.dept-list li{padding:6px 0;border-bottom:1px solid #f1f6f7}
+
+/* Faculty member small cards */
+.faculty-member{
+    background:linear-gradient(180deg,#ffffff,#fcfeff);
+    padding:12px;
+    border-radius:8px;
+    margin:8px 0;
+    box-shadow:0 6px 14px rgba(8,24,32,0.04);
+}
+.faculty-member h4{font-size:1rem;margin-bottom:6px;color:#0b6e74}
+.faculty-member p{font-size:0.92rem;margin-bottom:4px;color:var(--muted)}
+.faculty-member .fm-ach{color:var(--text);font-weight:600}
+.dept-summary{margin-bottom:10px;font-weight:600;color:var(--muted)}
+.dept-achievements ul{margin-left:18px;margin-top:8px}
+
+/* Department achievements box */
+.dept-achievements{
+    background: linear-gradient(180deg, rgba(11,110,116,0.03), rgba(255,127,80,0.02));
+    border-left:6px solid var(--accent-2);
+    padding:12px 14px;
+    margin-top:12px;
+    border-radius:8px;
+}
+.dept-achievements h4{color:var(--accent-2);margin:0 0 8px 0}
+.dept-achievements ul{margin-left:18px}
+.dept-achievements li{color:var(--text);font-weight:600;margin-bottom:6px}
+
+/* Head photo in department header */
+.head-photo{
+    width:48px;height:48px;border-radius:50%;object-fit:cover;margin-right:12px;border:3px solid rgba(255,255,255,0.12);
+}
+.dept-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.dept-head .head-left{display:flex;align-items:center}
+
+/* Faculty photo */
+.faculty-photo{width:56px;height:56px;border-radius:8px;object-fit:cover;margin-right:12px;float:left}
+.faculty-member{overflow:auto}
+
+/* Faculty branch badge inside faculty cards */
+.fm-branch{
+    display:inline-block;
+    background:var(--accent);
+    color:var(--primary);
+    padding:4px 10px;
+    border-radius:12px;
+    font-weight:700;
+    margin-bottom:8px;
+    font-size:0.85rem;
+}
+
+/* Transport and sports images */
+.transport-photo{width:100%;border-radius:8px;margin-bottom:12px;object-fit:cover}
+.sports-gallery{display:flex;gap:10px;margin-top:10px}
+.sports-gallery img{width:32%;border-radius:8px;object-fit:cover}
+
+/* Placements hero (students at work) */
+.placements-hero{
+    margin-top:20px;
+    padding:40px 30px;
+    border-radius:10px;
+    color:white;
+    background-image: linear-gradient(rgba(2,22,29,0.45), rgba(2,22,29,0.25)), url('images/placement.jpg');
+    background-size:cover;background-position:center;
+    box-shadow:0 10px 30px rgba(8,24,32,0.12);
+}
+.placements-hero h2{margin:0 0 8px 0}
+.placements-hero p{max-width:900px}
